@@ -1,0 +1,37 @@
+# Parent class
+class Animal:
+    def sound(self):
+        pass
+
+
+# Child classes
+class Dog(Animal):
+    def sound(self):
+        return "Woof"
+
+
+class Cat(Animal):
+    def sound(self):
+        return "Meow"
+
+
+class Cow(Animal):
+    def sound(self):
+        return "Moo"
+
+
+# Polymorphism function
+def make_sound(animal):
+    return animal.sound()
+
+
+# Example usage
+if __name__ == "__main__":
+    dog = Dog()
+    cat = Cat()
+    cow = Cow()
+
+    animals = [dog, cat, cow]
+
+    for animal in animals:
+        print(f"The {animal.__class__.__name__} makes the sound: {make_sound(animal)}")
